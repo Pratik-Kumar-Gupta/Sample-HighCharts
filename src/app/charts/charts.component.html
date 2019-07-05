@@ -1,0 +1,58 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<div class="container-fluid"><!--contianer fluid-->
+  <div class="row" id="customrow"><!--row1---->
+    <div class="col-md-4" id="logo">Logo</div>
+    <div class="col-md-7" id="logo">
+      <h3>Monthly Vulnerablity Threat Landscape</h3>
+    </div>
+  </div><!--row1-->
+  <div class="row" id="mtop"><!--row2-->
+    <div class="col-md-2">
+      <div class="btn-group-vertical">
+        <button type="button" id="mbottom" class="btn btn-dark">Add New Exploit</button>
+        <button type="button" id="mbottom" class="btn btn-dark">Delete Exploit Kit</button>
+        <button type="button" id="mbottom" class="btn btn-dark">Show Fire Eye Data</button>
+      </div>
+    </div>
+    <div class="col-md-9">
+      
+      <div class="row" id="border">
+          <form [formGroup]="chartsForm" class="form-inline" id="topbtm">
+          <label for="Month" class="mr-sm-2" id="mleft">Select Date:</label>
+          <input type="month" formControlName="date" class="form-control mb-2 mr-sm-2" name="date">
+          <!-- <input formControlName="date" name="date" placeholder="Date" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" class="form-control mb-2 mr-sm-2"> -->
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          <label for="mType" class="mr-sm-2" id="mleft">Select Machine Type:</label>
+          <select
+          class="form-control mb-2 mr-sm-2"
+          name="MachineType"
+          formControlName="MachineType"
+        >
+          <option disabled>Select Machine ...</option>
+          <option value="Server Details">Server Details</option>
+          <option value="Workstation Details">Workstation Details</option>
+        </select>
+        <label for="Rtype" class="mr-sm-2" id="mleft">Select Report Type:</label>
+        <select
+        name="ReportType"
+        class="form-control mb-2 mr-sm-2"
+        formControlName="ReportType"
+      >
+        <option disabled>Select Report ...</option>
+        <option value="EK Associated with Vulnerabilities">EK Associated with Vulnerabilities</option>
+        <option value="EK Associated QID and CVE">EK Associated QID and CVE</option>
+        <option value="Exploit Kit and QID Count in Environment">Exploit Kit and QID Count in Environment</option>
+        <option value="Known Threats Targeting Current Vulnerabilities">Known Threats Targeting Current Vulnerabilities</option>
+        <option value="Trending Graph for Previous Month">Trending Graph for Previous Month</option>
+        <option value="Technology Trend">Technology Trend</option>
+      </select>
+          <button style="margin-top: 0.5rem;margin-left: 1rem;" type="submit" class="mb-2">Submit</button>
+        </form>
+      </div>
+    
+    </div>
+  </div><!--row2-->
+</div><!--contianer fluid-->
+

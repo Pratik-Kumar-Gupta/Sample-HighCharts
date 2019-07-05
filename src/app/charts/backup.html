@@ -1,0 +1,71 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2" style="margin-top:30px">
+      <form [formGroup]="chartsForm">
+        <div class="input-group mb-3">
+          <input
+            formControlName="date"
+            name="date"
+            class="form-control"
+            [owlDateTime]="dt1"
+            [owlDateTimeTrigger]="dt1"
+            placeholder="Date Time"
+          />
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          <div class="input-group-append">
+            <span class="input-group-text">Date</span>
+          </div>
+        </div>
+        <br />
+        <div class="input-group mb-3">
+          <select
+            class="form-control custom-select"
+            name="MachineType"
+            formControlName="MachineType"
+          >
+            <option disabled>Select Machine Type</option>
+            <option value="Server Details">Server Details</option>
+            <option value="Workstation Details">Workstation Details</option>
+          </select>
+        </div>
+        <br />
+        <div class="input-group mb-3">
+          <select
+            name="ReportType"
+            class="custom-select"
+            formControlName="ReportType"
+          >
+            <option disabled>Select Report Type</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <br />
+        </div>
+        <div class="input-group mb-3">
+          <button type="button" class="btn btn-primary" (click)="getData()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-sm-5">
+          <div [chart]="samplechart"></div>
+        </div>
+        <div class="col-sm-5">
+          <div [chart]="piechart"></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-sm-5">
+          <div [chart]="samplechart1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
