@@ -31,8 +31,8 @@
           formControlName="MachineType"
         >
           <option disabled>Select Machine ...</option>
-          <option value="Server Details">Server Details</option>
-          <option value="Workstation Details">Workstation Details</option>
+          <option value="server">Server Details</option>
+          <option value="workstation">Workstation Details</option>
         </select>
         <label for="Rtype" class="mr-sm-2" id="mleft">Select Report Type:</label>
         <select
@@ -41,18 +41,24 @@
         formControlName="ReportType"
       >
         <option disabled>Select Report ...</option>
-        <option value="EK Associated with Vulnerabilities">EK Associated with Vulnerabilities</option>
-        <option value="EK Associated QID and CVE">EK Associated QID and CVE</option>
-        <option value="Exploit Kit and QID Count in Environment">Exploit Kit and QID Count in Environment</option>
-        <option value="Known Threats Targeting Current Vulnerabilities">Known Threats Targeting Current Vulnerabilities</option>
-        <option value="Trending Graph for Previous Month">Trending Graph for Previous Month</option>
-        <option value="Technology Trend">Technology Trend</option>
+        <option value="technology_type1">EK Associated with Vulnerabilities</option>
+        <option value="technology_type2">EK Associated QID and CVE</option>
+        <option value="technology_type3">Exploit Kit and QID Count in Environment</option>
+        <option value="technology_type4">Known Threats Targeting Current Vulnerabilities</option>
+        <option value="technology_type5">Trending Graph for Previous Month</option>
+        <option value="technology_type6">Technology Trend</option>
       </select>
-          <button style="margin-top: 0.5rem;margin-left: 1rem;" type="submit" class="mb-2">Submit</button>
+          <button style="margin-top: 0.5rem;margin-left: 1rem;" type="submit" class="mb-2" (click)="getData()">Submit</button>
         </form>
       </div>
     
     </div>
   </div><!--row2-->
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-9">
+        <div [chart]="samplechart"></div>
+    </div>
+  </div>
 </div><!--contianer fluid-->
 
